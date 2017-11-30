@@ -362,7 +362,7 @@ hr {
   font-size: 1.2em;
   font-weight: lighter;
   letter-spacing: 3px;
-  color: #CCCCCC;
+/*  color: #CCCCCC;*/
   -webkit-font-smoothing: antialiased; }
 
 .panel-cover {
