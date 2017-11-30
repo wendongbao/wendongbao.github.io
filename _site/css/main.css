@@ -750,7 +750,7 @@ img::-moz-selection {
   }
 
   .navigation__item a:hover {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 300;
     text-decoration: underline;
   }
