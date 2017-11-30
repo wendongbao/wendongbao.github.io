@@ -9,11 +9,10 @@
 # Basic
 title: 包稳冬
 subtitle: 个人站
-welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Download the theme</a>
 description: 欢迎来到我的个人站
 creator: <a href="http://onev.cat">@onevcat</a>
 
-url: "http://vno.onevcat.com"
+url: "https://wendongbao.github.io"
 
 permalink: /:year/:month/:title/
 
@@ -34,7 +33,7 @@ nav:
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
 # Pagination
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 paginate: 10
 paginate_path: "page/:num/"
 
