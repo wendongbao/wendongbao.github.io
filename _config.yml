@@ -7,10 +7,10 @@
 
 
 # Basic
-title: Vno Jekyll
-subtitle: A blog-orientation theme for Jekyll
+title: 包稳冬
+subtitle: 个人站
 welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Download the theme</a>
-description: Vno Jekyll is a port of my Ghost theme vno.
+description: 欢迎来到我的个人站
 creator: <a href="http://onev.cat">@onevcat</a>
 
 url: "http://vno.onevcat.com"
@@ -21,7 +21,7 @@ permalink: /:year/:month/:title/
 highlighter: rouge
 
 # supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
-cover_color: red
+#cover_color: red
 
 # The blog button should not be removed.
 blog_button:
