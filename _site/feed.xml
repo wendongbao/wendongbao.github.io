@@ -5,9 +5,262 @@
     <description>嗨，我是一杭，一名来自中国的 Java 开发者。现居杭州，就职于线条科技。正在修行，探求创意之源。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 30 Nov 2017 18:01:08 +0800</pubDate>
-    <lastBuildDate>Thu, 30 Nov 2017 18:01:08 +0800</lastBuildDate>
+    <pubDate>Thu, 30 Nov 2017 20:17:54 +0800</pubDate>
+    <lastBuildDate>Thu, 30 Nov 2017 20:17:54 +0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
+    
+      <item>
+        <title>Mac知识整合</title>
+        <description>&lt;h3 id=&quot;ds_store-文件是什么&quot;&gt;.DS_Store 文件是什么？&lt;/h3&gt;
+
+&lt;p&gt;.DS_Store 是 Mac OS 保存文件夹的自定义属性的隐藏文件，如文件的图标位置或背景色，相当于 Windows 的 desktop.ini。&lt;/p&gt;
+
+&lt;p&gt;1，禁止.DS_store 生成：           &lt;br /&gt;
+打开 “终端” ，复制黏贴下面的命令，回车执行，重启Mac即可生效。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;2，恢复.DS_store生成：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;defaults delete com.apple.desktopservices DSDontWriteNetworkStores
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;显示隐藏文件&quot;&gt;显示隐藏文件&lt;/h3&gt;
+
+&lt;p&gt;在终端执行命令，显示隐藏文件&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles -bool true
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;恢复隐藏&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles -bool false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;执行命令后需要重新打开能看到效果。&lt;/p&gt;
+
+&lt;h3 id=&quot;切换-pyhton-环境&quot;&gt;切换 Pyhton 环境&lt;/h3&gt;
+
+&lt;p&gt;我本地之前 Python 环境是 2.7.10 ，然后学习 Tensorflow 的时候，安装了 Python 3.5.2 ，把系统默认 Pyton 环境也设置成了 3.5.2 版本，今天运行以前写的 python 脚本发现运行不了了，因为python 2.7 和 3.5 的 语法有挺多改动，现在我需要把系统的 python 环境回退到 2.7。&lt;/p&gt;
+
+&lt;p&gt;可以直接修改 &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.bash_profile&lt;/code&gt; 文件。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1、修改 &lt;code class=&quot;highlighter-rouge&quot;&gt;vim ~/.bash_profile&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;修改方式有很多种，使用 vim  ，或者 cd ~/ 然后 open . 打开文件夹，找到 .bash_profile 文件，双击打开。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2、在&lt;code class=&quot;highlighter-rouge&quot;&gt;.bash_profile&lt;/code&gt; 文件里添加下面参数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;alias python=&quot;/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;3、使用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;source ~/.bash_profile&lt;/code&gt; 或者重启 终端 就 OK 了 。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;现在你再在终端输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;python&lt;/code&gt; 就会发现，显示的信息为 2.7 了&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+Python 2.7.10 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;default, Oct 23 2015, 19:19:21&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;GCC 4.2.1 Compatible Apple LLVM 7.0.0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;clang-700.0.59.5&lt;span class=&quot;o&quot;&gt;)]&lt;/span&gt; on darwin
+Type &lt;span class=&quot;s2&quot;&gt;&quot;help&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;copyright&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;credits&quot;&lt;/span&gt; or &lt;span class=&quot;s2&quot;&gt;&quot;license&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;more information.
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;生成sshkey过程&quot;&gt;生成SSHKey过程&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+1.查看是否已经有了ssh密钥：`cd ~/.ssh` ，如果没有密钥则不会有此文件夹，有则备份删除。    
+2.生存密钥：ssh-keygen -t rsa -C “test@gmail.com”。   按3个回车，密码为空。       
+
+Your identification has been saved in /home/tekkub/.ssh/id_rsa.
+Your public key has been saved in /home/tekkub/.ssh/id_rsa.pub.
+The key fingerprint is:
+………………    
+最后得到了两个文件：id_rsa和id_rsa.pub  
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;使用版本控制器-svn-versions-添加a库&quot;&gt;使用版本控制器 SVN (versions) 添加.a库&lt;/h3&gt;
+
+&lt;p&gt;Xcode 自带的 svn 和 Versions 以及一些其它工具都不能上传”.a”文件&lt;/p&gt;
+
+&lt;p&gt;下面是在 Mac 上如何把 .a 添加到 SVN 里面的&lt;/p&gt;
+
+&lt;p&gt;1、打开终端，输入cd，空格，然后将需要上传的 .a 文件所在的文件夹（不是.a文件） 拖拽到终端（此办法无需输入繁琐的路径，快捷方便） 回车&lt;/p&gt;
+
+&lt;p&gt;2、之后再输入如下命令：&lt;code class=&quot;highlighter-rouge&quot;&gt;svn add libGoogleAnalytics.a&lt;/code&gt; ，回车&lt;/p&gt;
+
+&lt;p&gt;之后会出现：A (bin) libGoogleAnalytics.a&lt;/p&gt;
+
+&lt;p&gt;表示添加成功，打开 Versions 就可以看到，刚才添加的 .a 文件，此时就可以手动上传了。&lt;/p&gt;
+
+&lt;p&gt;另外，请注意路径的正确性。&lt;/p&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;http://baixin&quot;&gt;潘柏信的博客&lt;/a&gt; » &lt;a href=&quot;http://baixin.io/2016/11/macTips/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 16 Nov 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/11/macTips/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/macTips/</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Git教程</title>
+        <description>&lt;h3 id=&quot;介绍&quot;&gt;介绍&lt;/h3&gt;
+
+&lt;p&gt;　　Git是做项目的版本管理，你也可以称它们为版本管理工具。假如现在你有一个文件夹，里面可以是项目，也可以是你的个人笔记(如我这个博客)，或者是你的简历、毕业设计等等，都可以使用git来管理。&lt;/p&gt;
+
+&lt;p&gt;　　目前常用的版本控制器有Git和SVN，即使这两个你没有全用过，至少也会听过，我这里以Git为例，个人比较喜欢Git，你也可以看看这篇文章：&lt;a href=&quot;http://www.worldhello.net/2012/04/12/why-git-is-better-than-svn.html&quot;&gt;为什么Git比SVN好&lt;/a&gt;。我使用的是Mac，Mac上没自带Git环境，但是作为iOS开发者，我安装Xcode的时候，Xcode里是有自带Git的，所以我不需要考虑怎么去安装Git了。&lt;/p&gt;
+
+&lt;h3 id=&quot;安装git&quot;&gt;安装Git&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;在Mac OS X上安装Git&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;提供两种方法参考：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;1、通过homebrew安装Git，具体方法请参考&lt;a href=&quot;http://brew.sh/&quot;&gt;homebrew的文档&lt;/a&gt;    &lt;br /&gt;
+2、直接从AppStore安装Xcode，Xcode集成了Git，不过默认没有安装，你需要运行Xcode。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;在Windows上安装Git&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;从&lt;a href=&quot;https://git-for-windows.github.io&quot;&gt;https://git-for-windows.github.io&lt;/a&gt; 下载，然后按默认选项安装即可，安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;配置git&quot;&gt;配置Git&lt;/h3&gt;
+
+&lt;p&gt;安装完成后，还需要最后一步设置，在命令行输入：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;$ git config –global user.name “Your Name”&lt;/li&gt;
+    &lt;li&gt;$ git config –global user.email “email@example.com”&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;“Your Name”： 是每次提交时所显示的用户名，因为Git是分布式版本控制系统，当我们push到远端时，就需要区分每个提交记录具体是谁提交的，这个”Your Name”就是最好的区分。&lt;/p&gt;
+
+&lt;p&gt;“email@example.com”： 是你远端仓库的email&lt;/p&gt;
+
+&lt;p&gt;–global：用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然我们也可以对某个仓库指定不同的用户名和Email地址。&lt;/p&gt;
+
+&lt;h3 id=&quot;开始使用-建立仓库&quot;&gt;开始使用-建立仓库：&lt;/h3&gt;
+
+&lt;p&gt;你在目标文件夹下使命令：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;git init  （创建.git文件）&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;就会创建一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;.git&lt;/code&gt; 隐藏文件，相当于已经建立了一个本地仓库。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;添加到暂存区：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;git add .   （全部添加到暂存区）&lt;/li&gt;
+    &lt;li&gt;git commit -m ‘ first commit’  （提交暂存区的记录到本地仓库）&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;其它&quot;&gt;其它&lt;/h3&gt;
+
+&lt;p&gt;git branc 查看时如出现&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;(HEAD detached at analytics_v2)&lt;/li&gt;
+    &lt;li&gt;dev&lt;/li&gt;
+    &lt;li&gt;master&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;代表现在已经进入一个临时的HEAD，可以使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;git checkout -b temp&lt;/code&gt; 创建一个 temp branch，这样临时HEAD上修改的东西就不会被丢掉了。
+然后切换到 dev 分支上，在使用 git branch merge temp，就可以把 temp 分支上的代码合并到 dev 上了。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;http://baixin&quot;&gt;潘柏信的博客&lt;/a&gt; » &lt;a href=&quot;http://baixin.io/2016/07/GitTutorial/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 13 Nov 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/11/GitTutorial/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/GitTutorial/</guid>
+        
+        <category>工具</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>开发常用工具</title>
+        <description>&lt;p&gt;工欲善其事必先利其器，选择一些好的工具可以成吨的提高自己的工作效率。&lt;/p&gt;
+
+&lt;h3 id=&quot;个人开发常用工具的收集&quot;&gt;个人开发常用工具的收集&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.zybuluo.com/mdeditor&quot;&gt;cmd Markdown&lt;/a&gt; 作业部落出版的Markdown编辑器&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rest-client/rest-client&quot;&gt;RESTClient&lt;/a&gt; 一个开源的客户端HTTP调试工具。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/getlantern/lantern&quot;&gt;lantern&lt;/a&gt; 蓝灯,一款开源的翻墙工具。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.charlesproxy.com/&quot;&gt;Charles&lt;/a&gt; 青花瓷, 一款HTTP/HTTPS的抓包工具。
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://blog.devtang.com/2015/11/14/charles-introduction/&quot;&gt;Charles 从入门到精通&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.sublimetext.com&quot;&gt;Sublime&lt;/a&gt; 一款强大的IDE,支持Python、JS、JSON格式化等等…更重要的是&lt;code class=&quot;highlighter-rouge&quot;&gt;Sublime&lt;/code&gt;支持的插件很多。
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.xuanfengge.com/practical-collection-of-sublime-plug-in.html&quot;&gt;实用的sublime插件集合&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;文章配图网站&quot;&gt;文章配图网站&lt;/h3&gt;
+
+&lt;p&gt;还在为文章配图而苦恼吗？点击店面的网站吧，各种各样的图片帮你丰富你的文章。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.gratisography.com/&quot;&gt;Gratisography&lt;/a&gt; gratisography 里面的图片每周都会更新，很多时尚流行的照片在里面，并且适合用在设计项目上。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.ssyer.com/home-index.html&quot;&gt;ssyer&lt;/a&gt;国内的网站，不需要翻墙，速度很快，图片最全。完全免费的图片库。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pixabay.com/&quot;&gt;Pixabay&lt;/a&gt; 不同类型的高清摄影照片。&lt;/p&gt;
+
+&lt;h3 id=&quot;ui设计网站&quot;&gt;UI设计网站&lt;/h3&gt;
+
+&lt;p&gt;作为一个开发者，自己写些小程序的时候经常会为没有UI而烦恼，下面就是一些UI设计网站，有新颖的UI界面设计，也有单独的UI元素，icon等。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.ui.cn/&quot;&gt;UI中国&lt;/a&gt; 国内潮流的UI设计作品。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.webdesigndev.com/&quot;&gt;webdesigndev&lt;/a&gt; 国外网站设计文章，各种各样的资料看到你眼花缭乱。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://dribbble.com/&quot;&gt;dribbble&lt;/a&gt; 接触过设计的应该都知道，一个很好的UI设计平台。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.flaticon.com/&quot;&gt;flaticon&lt;/a&gt; 各种icon的设计，一定有你想想要的。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;http://baixin&quot;&gt;潘柏信的博客&lt;/a&gt; » &lt;a href=&quot;http://baixin.io/2016/06/Develop_Tool/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 02 Nov 2017 19:15:06 +0800</pubDate>
+        <link>http://localhost:4000/2017/11/Develop_Tool/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/Develop_Tool/</guid>
+        
+        <category>工具</category>
+        
+        
+      </item>
     
       <item>
         <title>Jekyll搭建个人博客</title>
@@ -1163,112 +1416,6 @@ H6 :###### Header 6    &lt;br /&gt;
       </item>
     
       <item>
-        <title>Mac知识整合</title>
-        <description>&lt;h3 id=&quot;ds_store-文件是什么&quot;&gt;.DS_Store 文件是什么？&lt;/h3&gt;
-
-&lt;p&gt;.DS_Store 是 Mac OS 保存文件夹的自定义属性的隐藏文件，如文件的图标位置或背景色，相当于 Windows 的 desktop.ini。&lt;/p&gt;
-
-&lt;p&gt;1，禁止.DS_store 生成：           &lt;br /&gt;
-打开 “终端” ，复制黏贴下面的命令，回车执行，重启Mac即可生效。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;2，恢复.DS_store生成：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;defaults delete com.apple.desktopservices DSDontWriteNetworkStores
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;显示隐藏文件&quot;&gt;显示隐藏文件&lt;/h3&gt;
-
-&lt;p&gt;在终端执行命令，显示隐藏文件&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles -bool true
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;恢复隐藏&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles -bool false
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;执行命令后需要重新打开能看到效果。&lt;/p&gt;
-
-&lt;h3 id=&quot;切换-pyhton-环境&quot;&gt;切换 Pyhton 环境&lt;/h3&gt;
-
-&lt;p&gt;我本地之前 Python 环境是 2.7.10 ，然后学习 Tensorflow 的时候，安装了 Python 3.5.2 ，把系统默认 Pyton 环境也设置成了 3.5.2 版本，今天运行以前写的 python 脚本发现运行不了了，因为python 2.7 和 3.5 的 语法有挺多改动，现在我需要把系统的 python 环境回退到 2.7。&lt;/p&gt;
-
-&lt;p&gt;可以直接修改 &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.bash_profile&lt;/code&gt; 文件。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;1、修改 &lt;code class=&quot;highlighter-rouge&quot;&gt;vim ~/.bash_profile&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;修改方式有很多种，使用 vim  ，或者 cd ~/ 然后 open . 打开文件夹，找到 .bash_profile 文件，双击打开。
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;2、在&lt;code class=&quot;highlighter-rouge&quot;&gt;.bash_profile&lt;/code&gt; 文件里添加下面参数&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;alias python=&quot;/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;3、使用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;source ~/.bash_profile&lt;/code&gt; 或者重启 终端 就 OK 了 。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;现在你再在终端输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;python&lt;/code&gt; 就会发现，显示的信息为 2.7 了&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-Python 2.7.10 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;default, Oct 23 2015, 19:19:21&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;GCC 4.2.1 Compatible Apple LLVM 7.0.0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;clang-700.0.59.5&lt;span class=&quot;o&quot;&gt;)]&lt;/span&gt; on darwin
-Type &lt;span class=&quot;s2&quot;&gt;&quot;help&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;copyright&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;credits&quot;&lt;/span&gt; or &lt;span class=&quot;s2&quot;&gt;&quot;license&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;more information.
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;生成sshkey过程&quot;&gt;生成SSHKey过程&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-1.查看是否已经有了ssh密钥：`cd ~/.ssh` ，如果没有密钥则不会有此文件夹，有则备份删除。    
-2.生存密钥：ssh-keygen -t rsa -C “test@gmail.com”。   按3个回车，密码为空。       
-
-Your identification has been saved in /home/tekkub/.ssh/id_rsa.
-Your public key has been saved in /home/tekkub/.ssh/id_rsa.pub.
-The key fingerprint is:
-………………    
-最后得到了两个文件：id_rsa和id_rsa.pub  
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;使用版本控制器-svn-versions-添加a库&quot;&gt;使用版本控制器 SVN (versions) 添加.a库&lt;/h3&gt;
-
-&lt;p&gt;Xcode 自带的 svn 和 Versions 以及一些其它工具都不能上传”.a”文件&lt;/p&gt;
-
-&lt;p&gt;下面是在 Mac 上如何把 .a 添加到 SVN 里面的&lt;/p&gt;
-
-&lt;p&gt;1、打开终端，输入cd，空格，然后将需要上传的 .a 文件所在的文件夹（不是.a文件） 拖拽到终端（此办法无需输入繁琐的路径，快捷方便） 回车&lt;/p&gt;
-
-&lt;p&gt;2、之后再输入如下命令：&lt;code class=&quot;highlighter-rouge&quot;&gt;svn add libGoogleAnalytics.a&lt;/code&gt; ，回车&lt;/p&gt;
-
-&lt;p&gt;之后会出现：A (bin) libGoogleAnalytics.a&lt;/p&gt;
-
-&lt;p&gt;表示添加成功，打开 Versions 就可以看到，刚才添加的 .a 文件，此时就可以手动上传了。&lt;/p&gt;
-
-&lt;p&gt;另外，请注意路径的正确性。&lt;/p&gt;
-
-&lt;p&gt;转载请注明：&lt;a href=&quot;http://baixin&quot;&gt;潘柏信的博客&lt;/a&gt; » &lt;a href=&quot;http://baixin.io/2016/11/macTips/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 16 Nov 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/11/macTips/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/macTips/</guid>
-        
-        <category>iOS</category>
-        
-        
-      </item>
-    
-      <item>
         <title>TensorFlow 在 iOS 平台上的使用(一)</title>
         <description>&lt;p&gt;　　距离上次使用 TensorFlow 在iOS平台上做的小 Demo，已经过了四个月了，今天忽然想再看看,发现 Demo 已经不见了，我只能从头在编一次，这次发现编译 iOS 库，简单多了。&lt;/p&gt;
 
@@ -1489,237 +1636,6 @@ Privacy - Calendars Usage Description	日历&lt;/p&gt;
         <guid isPermaLink="true">http://localhost:4000/2016/10/Xcode8/</guid>
         
         <category>iOS</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>iOS设备左下角出现Appicon</title>
-        <description>&lt;p&gt;最近发现我设备锁屏后，按Home屏幕变亮的时候，左下角出现一个灰色的Appicon （应用图标），关于这个应用图标的出现做了一些调研，下面是应用图标出现的几种情况。&lt;/p&gt;
-
-&lt;p&gt;图一 iOS 系统自带的 App icon , 图二 第三方 App icon , 图三 通过 iBeacon 信号激活的 demo icon&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/icon/image01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;结论有三种情况导致设备的左下角出现灰色的-app-icon&quot;&gt;结论：有三种情况导致设备的左下角出现灰色的 App icon&lt;/h2&gt;
-
-&lt;h3 id=&quot;1appstore根据地点对app-推荐&quot;&gt;1、AppStore根据地点对App 推荐&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;简介&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;iOS 8会基于你的位置在锁屏界面上展示一个app快捷打开方式。比如你正在星巴克附近，那iOS 8会在锁屏界面上展示星巴克应用的icon，方便你快速打开。一些用户也表示会在锁屏界面收到app推荐，比如你在Costco和Apple Store附近，即便你之前没有安装过这些应用。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2app实现了handoff功能&quot;&gt;2、App实现了handoff功能&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/Handoff/HandoffFundamentals/HandoffFundamentals.html&quot;&gt;handoff简介&lt;/a&gt;：&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;OS X 10.10 Yosemite&lt;/code&gt; 新增了一个酷炫的功能 “Hand Off”，打开这个功能之后，用户可以在 Mac 上对 iPad 和 iPhone 进行操作，比如能够编写 iPhone 上未完成的邮件，并且可以在Mac上打开 iPhone 的热点等等， Mac 的 Hand Off 功能只能识别 Mac 周围的 iPhone 手机。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;handoff有几个要求：&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;1 两台设备都要登录同一个 iCloud 账号。&lt;/li&gt;
-      &lt;li&gt;2 两台设备上的app有相同的 TeamID 。&lt;/li&gt;
-      &lt;li&gt;3 锁屏（或dock）设备上的app支持的 &lt;code class=&quot;highlighter-rouge&quot;&gt;NSUserActivityTypes&lt;/code&gt; 包含活动设备上的app当前的UserActivityType。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;3app内有ibeacon信号接收功能app被ibeacon信号唤醒&quot;&gt;3、App内有iBeacon信号接收功能，App被iBeacon信号唤醒&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://developer.apple.com/ibeacon/&quot;&gt;iBeacon简介&lt;/a&gt;&lt;/strong&gt;：
-    &lt;ul&gt;
-      &lt;li&gt;是苹果公司2013年9月发布的移动设备用OS（iOS7）上配备的新功能。工作原理类似之前的蓝牙技术，由 &lt;code class=&quot;highlighter-rouge&quot;&gt;iBeacon&lt;/code&gt; 发射信号，iOS设备定位接受，反馈信号。根据这项简单的定位技术可以做出许多的相应技术应用,如：&lt;code class=&quot;highlighter-rouge&quot;&gt;室内定位&lt;/code&gt; 、&lt;code class=&quot;highlighter-rouge&quot;&gt;商品推荐&lt;/code&gt; 、&lt;code class=&quot;highlighter-rouge&quot;&gt;微信摇一摇&lt;/code&gt; 等。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;App icon出现的原因&lt;/strong&gt;：
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;iBeacon&lt;/code&gt; 具备后台定位的能力，只要用户把蓝牙(4.0或以后)开启 和 允许 App 访问位置信息。在有被 App 检测的 &lt;code class=&quot;highlighter-rouge&quot;&gt;iBeacon&lt;/code&gt; 出现时，如果设备是锁屏状态，设备的左下角就会出现该 App 的 icon 。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;参考链接:  &lt;br /&gt;
-&lt;a href=&quot;http://stackoverflow.com/questions/26082414/make-app-appear-as-ios-8-suggested-app-at-lockscreen/26676020#26676020&quot;&gt;Make app appear as iOS 8 Suggested App at lockscreen&lt;/a&gt;  &lt;br /&gt;
-&lt;a href=&quot;http://stackoverflow.com/questions/25897219/can-i-get-my-ios-app-to-appear-on-the-lower-left-corner-of-the-lock-screen/25898890#25898890&quot;&gt;Can I get my iOS app to appear on the lower left corner of the lock screen?&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://www.zhihu.com/question/26653964&quot;&gt;为什么 iOS 8 锁屏界面的左下角经常会出现某个应用的小图标？&lt;/a&gt;  &lt;br /&gt;
-&lt;a href=&quot;https://www.v2ex.com/t/142320&quot;&gt;关于 IOS8 锁屏左下方出现的 APP ICON&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;转载请注明：&lt;a href=&quot;http://baixin&quot;&gt;潘柏信的博客&lt;/a&gt; » &lt;a href=&quot;http://baixin.io/2016/09/iOSLowerLeftAppicon/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 23 Sep 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/09/iOSLowerLeftAppicon/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/09/iOSLowerLeftAppicon/</guid>
-        
-        <category>iOS</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Python自动化测试iOS项目</title>
-        <description>&lt;p&gt;作为一个开发人员，为了保证自己的代码的健壮，写单元测试是必不可少的环节，然而最痛快的是每天去手动跑一遍所有的case。那么什么能帮我们解决这些繁琐的操作呢，大家应该会想到自动化测试脚本了，是的，我们可以借助脚本来完成全自动化测试，下面是我列的每天脚本自动执行流程：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;1、&lt;code class=&quot;highlighter-rouge&quot;&gt;pull&lt;/code&gt; git仓库里面的最新代码到本地。&lt;/li&gt;
-    &lt;li&gt;2、然后打包成&lt;code class=&quot;highlighter-rouge&quot;&gt;App&lt;/code&gt;。&lt;/li&gt;
-    &lt;li&gt;3、安装到模拟器上。&lt;/li&gt;
-    &lt;li&gt;4、运行App，执行单元测试，生成测试数据并保存到本地。&lt;/li&gt;
-    &lt;li&gt;5、脚本读取测试数据，邮件发送给相关人员。&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;当这些全自动化后，可以大大减少开发人员的维护成本，即使每次项目里面有新增模块后，增加测试case就行了，下面会介绍自动测试这5步具体怎么去执行，整个脚本是使用Python写的，代码很少功能也很简单，但这已经可以帮我们完成基本的自动化测试了，这就是脚本的强大之处，选择Pyhton纯属个人喜好，最近也在学习Python，当然了最终使用什么语言看你自己。&lt;/p&gt;
-
-&lt;h3 id=&quot;python执行shell命令完成测试&quot;&gt;python执行shell命令完成测试&lt;/h3&gt;
-
-&lt;p&gt;首先确认本机上安装了&lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;python&lt;/code&gt; 。  &lt;br /&gt;
-脚本判断本地是否存在项目，不存在则使用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;git clone ...&lt;/code&gt; ，存在则使用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;git pull ...&lt;/code&gt; 。     &lt;br /&gt;
-这些在Linux的命令都可以使用脚本来完成的，python的 &lt;code class=&quot;highlighter-rouge&quot;&gt;os.popen()&lt;/code&gt; 方法 就是可以在Linux上执行shell命令。   &lt;br /&gt;
-&lt;strong&gt;例如：&lt;/strong&gt;  把下面这段代码添加到一个 test.py 的文件里，然后在终端上执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;python test.py&lt;/code&gt; 命令你就会看到，你的当前目录下正在下载我的博客了。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import os
-
-os.popen('git clone https://github.com/leopardpan/leopardpan.github.io.git')   
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;git pull 。。。 更新代码也是一样的。&lt;/p&gt;
-
-&lt;p&gt;接下来的打包、安装、运行都是使用python执行shell命令&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;把iOS项目打包成App，下面的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Demo&lt;/code&gt; 是项目的名字&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;os.popen(‘xcodebuild -project Demo.xcodeproj -target Demo -configuration Debug -sdk iphonesimulator’)&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;这行脚本运行完成后，你就会发现同会生成一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;build&lt;/code&gt; 的文件夹。&lt;br /&gt;
-Debug参数表示现在是Debug模式，如果Xcode里面改成Release了，这里需要改成Release。&lt;br /&gt;
-xcodebuild 命令是 Xcode Command Line Tools 的一部分。通过调用这个命令，可以完成 iOS 工程的编译，打包和签名过程。可以使用 xcodebuild –help 来看看具体有哪些功能。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;打开iOS模拟器，这里运行的是&lt;code class=&quot;highlighter-rouge&quot;&gt;iPhone 6 Plus&lt;/code&gt; 你也可以换成其它型号的模拟器&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;os.popen(‘xcrun instruments -w “iPhone 6 Plus”’)&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;把刚才打包生成的App安装到模拟器上&lt;/strong&gt;    &lt;br /&gt;
-在安装之前要先卸载App,不然你运行的永远是最初安装的那个，后来安装的不会覆盖之前的，卸载App&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;os.popen(‘xcrun simctl uninstall booted com.test.Demo’)&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;booted 后面接的是 &lt;code class=&quot;highlighter-rouge&quot;&gt;Bundle Identifier&lt;/code&gt;，我的是 com.test.Demo，然后再安装App&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;os.popen(‘xcrun simctl install booted build/Debug-iphonesimulator/Demo.app ‘)&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;booted 后面接的是.app的路径，我打包的时候的是Debug，所以这个的文件夹名称是Debug-iphonesimulator。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;在模拟器里运行App&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;os.popen(‘xcrun simctl launch booted com.test.Demo’)&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;booted 后面接的是 &lt;code class=&quot;highlighter-rouge&quot;&gt;Bundle Identifier&lt;/code&gt;，我的是 com.test.Demo。&lt;/p&gt;
-
-&lt;p&gt;到目前为止，你就会发现你的项目已经运行起来了，你可以在项目是Debug模式下一启动就执行单元测试，然后把对应的测试数据保存到本地为data.json。然后在使用python脚本读取测试文件的数据，最终使用邮件发送给相关人员，pyhton读取数据很简单，一行代码就行&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;data = open(‘data.json’).read()&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;data里面就是json字符串，为了脚本操作简单，我在存储的时候直接把json格式的转成了字符串类型。&lt;/p&gt;
-
-&lt;h3 id=&quot;python发送邮件&quot;&gt;python发送邮件&lt;/h3&gt;
-
-&lt;p&gt;我使用的是SMTP进行邮件发送的，SMTP是发送邮件的协议，Python内置对SMTP的支持，可以发送纯文本邮件、HTML邮件以及带附件的邮件。&lt;/p&gt;
-
-&lt;p&gt;Python对SMTP支持有smtplib和email两个模块，email负责构造邮件，smtplib负责发送邮件，具体代码如下：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;from email import encoders
-from email.header import Header
-from email.mime.text import MIMEText
-from email.utils import parseaddr, formataddr
-import smtplib
-
-def format_addr(self,s):
-    name, addr = parseaddr(s)
-    return formataddr(( \
-        Header(name, 'utf-8').encode(), \
-        addr.encode('utf-8') if isinstance(addr, unicode) else addr))
-
-def send_mail(self, mail, message, title):
-	from_addr = 'leopardpan@163.com'
-	password = ''
-	to_addr = mail
-	smtp_server = 'smtp.163.com'
-
-	msg = MIMEText(message, 'plain', 'utf-8')
-	msg['From'] = self.format_addr(u'自动化测试邮件 &amp;lt;%s&amp;gt;' % from_addr)
-	msg['To'] = self.format_addr(u'管理员 &amp;lt;%s&amp;gt;' % to_addr)
-	msg['Subject'] = Header(title, 'utf-8').encode()
-
-	server = smtplib.SMTP(smtp_server, 25)
-	server.set_debuglevel(1)
-	server.login(from_addr, password)
-	server.sendmail(from_addr, [to_addr], msg.as_string())
-	server.quit()
-
-send_mail('leopardpan@icloud.com','正文','标题')
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;from_addr是发送方的邮箱地址，password是开通SMTP时输入的密码   &lt;br /&gt;
-smtp_server是smtp的服务，如果你的from_addr是gamil.com，那么就要写成smtp_server = ‘smtp.gmail.com’ 了。&lt;/p&gt;
-
-&lt;p&gt;方法 send_mail(self, mail, message, title): 有四个参数，第一个不用传，第二个参数是收信人的邮箱，第三个是邮件的正文，第四个是邮件的标题，方法调用格式： &lt;code class=&quot;highlighter-rouge&quot;&gt;send_mail('leopardpan@icloud.com','正文','标题')&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;注意：发送方的邮箱必须要开通SMTP功能才行，否则会报错&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;SMTPSenderRefused: (550, ‘User has no permission’, ‘leopardpan@163.com’)&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;163的SMTP开通，需要你登录网易邮箱，然后点击顶部的设置就会出现&lt;code class=&quot;highlighter-rouge&quot;&gt;POP3/SMTP/IMAP&lt;/code&gt;，点击之后，勾选选择开启，这个时候需要你输入密码，记住这个密码就是上面代码中的&lt;code class=&quot;highlighter-rouge&quot;&gt;password&lt;/code&gt;，如果你都完成的话，你把上面的代码拷贝出现，把邮箱修改成你自己的，使用 pyhton 运行一下吧。&lt;/p&gt;
-
-&lt;p&gt;上面的几个流程结合起来就可以实现一个简单的自动化测试了，如果你有什么建议和意见欢迎讨论。&lt;/p&gt;
-
-&lt;p&gt;参考链接：
-&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/001386832745198026a685614e7462fb57dbf733cc9f3ad000&quot;&gt;SMTP发送邮件&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;转载请注明：&lt;a href=&quot;http://baixin&quot;&gt;潘柏信的博客&lt;/a&gt; » &lt;a href=&quot;http://baixin.io/2016/08/PythonTestAutomationiOS/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 04 Aug 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/08/PythonTestAutomationiOS/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/08/PythonTestAutomationiOS/</guid>
-        
-        <category>python</category>
         
         
       </item>
