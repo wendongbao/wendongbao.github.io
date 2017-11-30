@@ -583,7 +583,9 @@ img::-moz-selection {
     color: #FFF;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); }
   .panel-inverted a {
-    color: #FFF; }
+    color: #FFF;
+    text-decoration: none;
+  }
 
   .cover-navigation {
     margin-top: 0px;
@@ -742,7 +744,7 @@ img::-moz-selection {
   }
 
   .navigation__item a:hover {
-    color: #F02F26;
+    color: #2188FF;
   }
 
   .navigation__item_social {
