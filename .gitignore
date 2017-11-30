@@ -1,4 +1,6 @@
-_site
-node_modules
-validation-report.json
-validation-status.json
+_site/
+.sass-cache/
+*.DS_Store
+.idea
+*.swp
+.Trashes
